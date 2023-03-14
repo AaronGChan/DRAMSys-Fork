@@ -8,7 +8,7 @@
         "EnableWindowing": false,
         "ErrorCSVFile": "",
         "ErrorChipSeed": 42,
-        "PowerAnalysis": false,
+        "PowerAnalysis": true,
         "SimulationName": "ddr3",
         "SimulationProgressBar": true,
         "StoreMode": "NoStorage",

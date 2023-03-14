@@ -78,8 +78,12 @@ public:
                 // HBM specific, one or two pseudo channels per channel
                 * memSpec.pseudoChannelsPerChannel);
 
+        double responseLatency = 1/(2*bandwidth) + (memSpec.tCK.value() * 2); // the 2 is the CAS timing, from the delay_cycles in main.cpp
         std::cout << name() << std::string("  Total Time:     ")
-                  << sc_core::sc_time_stamp().to_string()
+                  << std::setw(6) << sc_core::sc_time_stamp().to_string()
+                  << std::endl;
+        std::cout << name() << std::string("  Response Latency:     ")
+                  << (responseLatency) << " ns |"
                   << std::endl;
         std::cout << name() << std::string("  AVG BW:         ")
                   << std::fixed << std::setprecision(2)
